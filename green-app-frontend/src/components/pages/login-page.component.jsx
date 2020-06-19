@@ -77,8 +77,9 @@ export default function SignIn() {
         <CssBaseline />
 
         <div className={classes.paper}>
-          <div className={classes.card}>
-            <img src={require('../../assets/1x/Asset 2.png')}></img>
+          <div className={classes.card} style={{"align-items":'center'}}>
+            <div textAlign='center'>Log in</div>
+            {/* <img src={require('../../assets/1x/Asset 7.png')}></img> */}
 
             {/* <Typography component="h1" variant="h5" style={{ 'font-family': 'CeraPro-Thin' }}>
               Log in

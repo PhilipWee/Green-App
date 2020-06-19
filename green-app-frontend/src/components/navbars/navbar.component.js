@@ -69,7 +69,7 @@ const Example = (props) => {
           </Nav>
 
           <Button className="mr-1" color="primary">Sign Up</Button>{' '}
-          <Button color="primary">Log In</Button>{' '}
+          <Button color="primary" href='/login-page'>Log In</Button>{' '}
         </Collapse>
       </Navbar>
     </div>

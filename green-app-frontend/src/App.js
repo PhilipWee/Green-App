@@ -13,6 +13,7 @@ import ActivityGeneration from "./components/pages/activity-generation.component
 import CertificateGeneration from "./components/pages/certificate-generation.component";
 import CommunityPage from "./components/pages/community-page.component";
 import LandingPage from "./components/pages/landing-page.component";
+import LoginPage from "./components/pages/login-page.component";
 
 //Navbar Imports
 import Navbar from "./components/navbars/navbar.component";
@@ -20,22 +21,38 @@ import NavbarBottom from "./components/navbars/navbar-bottom.component";
 
 
 class App extends Component {
+  //For changing the background color depending on page
+  constructor(props) {
+    super(props);
+    this.state = {
+      color:'#c5c5da'
+    }
+  }
+
+  changeColor = color => {
+    this.setState({color})
+  }
+  // '#c5c5da'
   render() {
     return (
 
       <Router>
-        <Navbar></Navbar>
-        <Switch>
-          <Route path="/accountability-buddy-chat" exact component={AccountabilityBuddyChat} />
-          <Route path="/similar-activities-finder" exact component={SimilarActivitiesFinder} />
-          <Route path="/carbon-emission-calculator" exact component={CarbonEmissionCalculator} />
-          <Route path="/goal-setter-with-buddy" exact component={GoalSetterWithBuddy} />
-          <Route path="/activity-generation" exact component={ActivityGeneration} />
-          <Route path="/certificate-generation" exact component={CertificateGeneration} />
-          <Route path="/community-page" exact component={CommunityPage} />
-          <Route path="/" exact component={LandingPage} />
-        </Switch>
-        <NavbarBottom></NavbarBottom>
+        <div style={{backgroundColor:this.state.color}}>
+          <Navbar></Navbar>
+          <Switch>
+            <Route path="/accountability-buddy-chat" exact component={AccountabilityBuddyChat} />
+            <Route path="/similar-activities-finder" exact component={SimilarActivitiesFinder} />
+            <Route path="/carbon-emission-calculator" exact component={CarbonEmissionCalculator} />
+            <Route path="/goal-setter-with-buddy" exact component={GoalSetterWithBuddy} />
+            <Route path="/activity-generation" exact component={ActivityGeneration} />
+            <Route path="/certificate-generation" exact component={CertificateGeneration} />
+            <Route path="/community-page" exact component={CommunityPage} />
+            <Route path="/login-page" exact component={LoginPage} />
+            <Route path="/" exact component={LandingPage} />
+          </Switch>
+          <NavbarBottom></NavbarBottom>
+        </div>
+
       </Router>
     );
   }

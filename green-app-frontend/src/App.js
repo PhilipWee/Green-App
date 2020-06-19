@@ -14,7 +14,9 @@ import CertificateGeneration from "./components/pages/certificate-generation.com
 import CommunityPage from "./components/pages/community-page.component";
 import LandingPage from "./components/pages/landing-page.component";
 
+//Navbar Imports
 import Navbar from "./components/navbars/navbar.component";
+import NavbarBottom from "./components/navbars/navbar-bottom.component";
 
 
 class App extends Component {
@@ -33,7 +35,7 @@ class App extends Component {
           <Route path="/community-page" exact component={CommunityPage} />
           <Route path="/" exact component={LandingPage} />
         </Switch>
-
+        <NavbarBottom></NavbarBottom>
       </Router>
     );
   }

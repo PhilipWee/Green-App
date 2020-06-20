@@ -14,7 +14,7 @@ const RewardUnit = (props) => {
     
     return (
         <Box my={0.5}>
-            <Card>    
+                <Card style={{borderRadius:'25px', backgroundColor:'rgba(255, 255, 255, 0.7'}}>    
                 <CardContent>
                 {cardImage}
                 <Typography gutterBottom variant="h5" component="h2">

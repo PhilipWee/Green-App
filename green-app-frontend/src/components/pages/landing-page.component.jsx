@@ -99,12 +99,12 @@ export default function LandingPage() {
                 <div className={classes.paper} style={{ marginLeft: 20, position: 'absolute' }}>
                     <Grid container direction='column'>
                         <Grid item>
-                            {/* <img
+                            <img
                                 alt="..."
-                                src={require("../../assets/1x/logosolo-06.png")}
-                                style={{ width: "100px", margin:1}}
-                            /> */}
-                            <h1>ECOSYSTEM.</h1>
+                                src={require("../../assets/1x/ecosystems logo-05.png")}
+                                style={{ width: "200px", margin:1}}
+                            />
+                            {/* <h1>ECOSYSTEM.</h1> */}
                             <h3>Less Pollution.</h3>
                             <h4>More Savings.</h4>
                         </Grid>

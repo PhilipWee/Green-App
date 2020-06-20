@@ -14,6 +14,42 @@ import Container from '@material-ui/core/Container';
 import RewardUnit from '../subcomponents/reward-unit.component';
 import Axios from 'axios';
 
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import CeraPro from '../../assets/css/CeraPro-Regular.woff'
+
+const cerapro = {
+    fontFamily: 'Cera Pro',
+    src: `local('Cera Pro Regular'), local('CeraPro-Regular'),
+        url(${CeraPro}) format('woff')`,
+    fontWeight: 'normal',
+    fontStyle: 'normal'
+}
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            main: "#3e4069",
+        },
+        secondary: {
+            main: '#c4c5d9',
+        },
+    },
+    typography: {
+        fontFamily: [
+            'Cera Pro',
+
+        ].join(','),
+
+    },
+    overrides: {
+        MuiCssBaseline: {
+            '@Global': {
+                '@font-face': cerapro,
+            }
+        }
+    }
+});
+
 function Copyright() {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
@@ -63,8 +99,8 @@ export default function ClaimRewards() {
     const [content, setContent] = useState(null);
 
     useEffect(() => {
-        (async ()=>{
-            if (content != null){
+        (async () => {
+            if (content != null) {
                 return;
             }
 
@@ -80,20 +116,28 @@ export default function ClaimRewards() {
     }, [content])
 
     return (
-        <Container component="main" maxWidth="xs" style={{height:'90vh'}}>
+        <Container component="main" maxWidth="xs" style={{ height: '90vh' }}>
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
 
-            <CssBaseline />
+                <div className={classes.paper}>
+                    <Grid container direction='row' justify="space-between" alignItems='baseline'>
+                        <Grid item>
+                            <h2>Claim Rewards</h2>
+                        </Grid>
+                        <Grid item style={{width: '30%'}}>
+                            <img style={{width: '100%', marginBottom:'-50px'}} src={require('../../assets/1x/howto3-04.png')}></img>
+                        </Grid>
 
-            <div className={classes.paper}>
-                <Grid container direction='row' justify="space-between">
-                    <Grid item>Claim Rewards</Grid>
+                    </Grid>
+                    {content}
+                </div>
+                    <Box mt={8}>
+                        <Copyright />
+                    </Box>
+            </ThemeProvider>
 
-                </Grid>
-                {content}     
-            </div>
-            <Box mt={8}>
-                <Copyright />
-            </Box>
+
         </Container>
     );
 }

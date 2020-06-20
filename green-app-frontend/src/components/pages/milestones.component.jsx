@@ -76,7 +76,8 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         paddingLeft: theme.spacing(2),
         paddingRight: theme.spacing(2),
-        paddingBottom: theme.spacing(2)
+        paddingBottom: theme.spacing(2),
+        alignItems: 'center'
     },
     avatar: {
         margin: theme.spacing(1),
@@ -103,8 +104,8 @@ export default function Milestones() {
     const [content, setContent] = useState(null);
 
     useEffect(() => {
-        (async ()=>{
-            if (content != null){
+        (async () => {
+            if (content != null) {
                 return;
             }
 
@@ -127,21 +128,27 @@ export default function Milestones() {
 
 
     return (
-        <Container component="main" maxWidth="xs" style={{height:'90vh'}}>
+        <Container component="main" maxWidth="xs" style={{ height: '90vh' }}>
 
             <CssBaseline />
 
             <div className={classes.paper}>
 
                 <Grid container direction='row' justify="space-between">
-                  <Grid item><h2 style={{fontType:'bold'}}>Your Challenges</h2></Grid>
-                  {content}
-                  </Grid>
+                    <Grid item><h2 style={{ fontType: 'bold' }}>Your Challenges</h2></Grid>
+                    {content}
+                </Grid>
+                <Box mt={4}></Box>
+                <Button variant='contained' color='primary' href='/community-page'>
+                    View Challenge Forums
+                 </Button>
 
             </div>
+
             <Box mt={8}>
                 <Copyright />
             </Box>
+
         </Container>
     );
 }

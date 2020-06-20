@@ -111,7 +111,7 @@ export default function Milestones() {
                 </Grid>
                 <MilestoneUnit
                 name='Recycle some bottles'
-                reward='10% Lazada Voucher on completion'
+                reward='10% Lazada Voucher'
                 curVal='50'
                 targetVal='100'
                 iconName='bus'></MilestoneUnit>

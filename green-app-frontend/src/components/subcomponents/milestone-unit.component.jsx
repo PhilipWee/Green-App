@@ -68,15 +68,15 @@ class IconSVG extends Component {
     render() {
         switch (this.props.iconName) {
             case 'bus':
-                return <img src={require('../../assets/1x/Asset 8.svg')}></img>
+                return <img style={{'width':'100%'}}src={require('../../assets/1x/Asset 8.png')}></img>
             case 'lunchBox':
-                return <img src={require('../../assets/1x/Asset 9.svg')}></img>
+                return <img style={{'width':'100%'}}src={require('../../assets/1x/Asset 9.png')}></img>
             case 'shoes':
-                return <img src={require('../../assets/1x/Asset 10.svg')}></img>
+                return <img style={{'width':'100%'}}src={require('../../assets/1x/Asset 10.png')}></img>
             case 'plant':
-                return <img src={require('../../assets/1x/Asset 11.svg')}></img>
+                return <img style={{'width':'100%'}}src={require('../../assets/1x/Asset 11.png')}></img>
             case 'bottle':
-                return <img src={require('../../assets/1x/Asset 12.svg')}></img>
+                return <img style={{'width':'100%'}}src={require('../../assets/1x/Asset 12.png')}></img>
 
         }
     }
@@ -98,10 +98,13 @@ class MilestoneUnit extends Component {
 
                             <Box px={3} py={2}>
 
-                                <Grid container direction='row' alignItems='center' justify='space-between'>
+                                <Grid container wrap='nowrap' direction='row' alignItems='center' justify='space-between'>
 
-                                    <Grid item style={{ width: '20%' }}>
-
+                                    <Grid item style={{'width':'20%'}}>
+                                        
+                                            {/* <img style={{'width':'100%'}} src={require('../../assets/1x/Asset 12.png')}></img> */}
+                                        
+                                        
 
                                         <IconSVG iconName={this.props.iconName || 'bus'}></IconSVG>
                                     </Grid>

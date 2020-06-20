@@ -3,4 +3,4 @@ WORKDIR /usr/app
 COPY . .
 RUN npm install
 EXPOSE $PORT
-CMD [ "node", "./src/app.js" ]
+CMD [ "node", "./app.js" ]

@@ -1,0 +1,15 @@
+{
+    "abcdef" : {
+        "id" : "abcdef",
+        "title": "10% lazada voucher",
+        "description": "yay a voucher cool",
+        "company": "lazada"
+    },
+
+    "hijklm" : {
+        "id": "hijklm",
+        "title": "10% shopee voucher",
+        "description": "yay a voucher cool",
+        "company": "shopee"
+    }
+}

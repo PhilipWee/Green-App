@@ -14,6 +14,7 @@ import CertificateGeneration from "./components/pages/certificate-generation.com
 import CommunityPage from "./components/pages/community-page.component";
 import LandingPage from "./components/pages/landing-page.component";
 import LoginPage from "./components/pages/login-page.component";
+import Milestones from "./components/pages/milestones.component";
 
 //Navbar Imports
 import Navbar from "./components/navbars/navbar.component";
@@ -25,7 +26,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      color:'#c5c5da'
+      color:'#FFFFFF'
     }
   }
 
@@ -49,6 +50,7 @@ class App extends Component {
             <Route path="/community-page" exact component={CommunityPage} />
             <Route path="/login-page" exact component={LoginPage} />
             <Route path="/" exact component={LandingPage} />
+            <Route path="/milestones" exact component={Milestones} />
           </Switch>
           <NavbarBottom></NavbarBottom>
         </div>

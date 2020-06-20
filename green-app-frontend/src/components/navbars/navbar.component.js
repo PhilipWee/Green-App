@@ -30,6 +30,9 @@ const Example = (props) => {
             <NavItem>
               <NavLink href="/carbon-emission-calculator/">Carbon Emission Calculator</NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink href="/milestones">Milestones</NavLink>
+            </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 My Environment

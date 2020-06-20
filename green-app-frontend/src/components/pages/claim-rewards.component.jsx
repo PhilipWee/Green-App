@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 
@@ -12,6 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
 import RewardUnit from '../subcomponents/reward-unit.component';
+import Axios from 'axios';
 
 function Copyright() {
     return (
@@ -59,6 +60,25 @@ export default function ClaimRewards() {
 
     const classes = useStyles();
 
+    const [content, setContent] = useState(null);
+
+    useEffect(() => {
+        (async ()=>{
+            if (content != null){
+                return;
+            }
+
+            const res = await Axios.get(`http://${window.location.hostname}/users/0/rewards`);
+
+            console.log(res.data.challenges)
+            const updatedContent = res.data.rewards.map((r) => (
+                <RewardUnit name={r.title}></RewardUnit>
+            ))
+
+            setContent(updatedContent);
+        })();
+    }, [content])
+
     return (
         <Container component="main" maxWidth="xs" style={{height:'90vh'}}>
 
@@ -69,12 +89,7 @@ export default function ClaimRewards() {
                     <Grid item>Claim Rewards</Grid>
 
                 </Grid>
-                <RewardUnit name='10% off innis free'></RewardUnit>
-                <RewardUnit></RewardUnit>
-                <RewardUnit></RewardUnit>
-                <RewardUnit></RewardUnit>
-                <RewardUnit></RewardUnit>
-                
+                {content}     
             </div>
             <Box mt={8}>
                 <Copyright />

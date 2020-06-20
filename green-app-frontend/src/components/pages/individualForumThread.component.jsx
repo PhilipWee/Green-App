@@ -96,6 +96,29 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ForumThread() {
 
+    var state = [
+            {
+                id: '1',
+                name: 'Philip Wee',
+                content: 'Anyone wants to recycle at the collection point together?'
+            },
+            {
+                id: '2',
+                name: 'Nicholas Lim',
+                content: 'Hi guys, nice to see us all recycling together! LOL'
+            },
+            {
+                id: '3',
+                name: 'Low En',
+                content: '@PhilipWee Hey I am in, lets go at 3pm?'
+            },
+            {
+                id: '4',
+                name: 'Son Soo Han',
+                content: 'We are almost reaching the challenge goal!'
+            }
+        ]
+
     const classes = useStyles();
 
     return (
@@ -107,29 +130,22 @@ export default function ForumThread() {
                 <Grid container direction='row' justify="space-between">
                     <Grid item><h3>Thread 1 Activities</h3></Grid>
                     <Grid item>
-                        <ThreadList
-                        threadnumber="#1"
-                        username='Philip Wee'
-                        content='Anyone wants to recycle at the collection point together?'
-                        ></ThreadList>
-                        <ThreadList
-                        threadnumber="#2"
-                        username='Nicholas Lim'
-                        content='Hi guys, nice to see us all recycling together! LOL'>
-                        </ThreadList>
-                        <ThreadList
-                        threadnumber="#3"
-                        username='Low En'
-                        content='@PhilipWee Hey I am in, lets go at 3pm?'>
-                        </ThreadList>
-                        <ThreadList
-                        threadnumber="#4"
-                        username='Son Soo Han'
-                        content='We are almost reaching the challenge goal!'>
-                        </ThreadList>
+
+                        {state.map(function(d, idx){
+                            return (
+                            <ThreadList
+                                threadnumber= {d.id}
+                                username={d.name}
+                                content={d.content}
+                            >
+                            </ThreadList>
+                        )})}
                     </Grid>
                     <Grid item>
-                        <ThreadForm />
+                        <ThreadForm
+                            statechange={state}
+                        >
+                        </ThreadForm>
                     </Grid>
                 </Grid>
 

@@ -19,6 +19,7 @@ app.use(cors({
 
 app.use('/challenges', require('./src/challenges'));
 app.use('/rewards', require('./src/rewards'));
+app.use('/users', require('./src/users'));
 
 app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`);

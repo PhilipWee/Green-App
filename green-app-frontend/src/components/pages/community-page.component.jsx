@@ -15,6 +15,57 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import CommunityList from '../subcomponents/community-list.component';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+
+//import the font
+import CeraPro from '../../assets/css/CeraPro-Regular.woff'
+
+const cerapro = {
+    fontFamily: 'Cera Pro',
+    src: `local('Cera Pro Regular'), local('CeraPro-Regular'),
+        url(${CeraPro}) format('woff')`,
+    fontWeight: 'normal',
+    fontStyle: 'normal'
+}
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            main: "#3e4069",
+        },
+        secondary: {
+            main: '#c4c5d9',
+        },
+    },
+    typography: {
+        fontFamily: [
+            'Cera Pro',
+
+        ].join(','),
+
+    },
+    overrides: {
+        MuiCssBaseline: {
+            '@Global': {
+                '@font-face': cerapro,
+            }
+        }
+    }
+});
+
+function Copyright() {
+    return (
+        <Typography variant="body2" color="textSecondary" align="center">
+            {'Copyright © '}
+            <Link color="inherit" href="https://material-ui.com/">
+                NlPS
+        </Link>{' '}
+            {new Date().getFullYear()}
+            {'.'}
+        </Typography>
+    );
+}
+
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -54,17 +105,37 @@ export default function CommunityPage() {
 
             <div className={classes.paper}>
                 <Grid container direction='row' justify="space-between">
-                    <Grid item>Community Forum Threads for ongoing Challenges</Grid>
-
+                    <Grid item>
+                        <h2 style={{fontType:'bold'}}>
+                            Community Forum Threads for ongoing Challenges
+                        </h2>
+                    </Grid>
                 </Grid>
                 <CommunityList
-                name='Challenge 1 Thread: Recycle some bottles'
-                participants='Number of Participants: 10'
-                sponsorCompany='SUxTD Pte Ltd'></CommunityList>
-                <CommunityList></CommunityList>
-                <CommunityList></CommunityList>
+                    name='Challenge 1 Thread: Recycle some bottles'
+                    participants='Number of Participants: 10'
+                    sponsorCompany='SUxTD Pte Ltd'
+                    iconName='bus'>
+                </CommunityList>
+                <CommunityList
+                    name='Challenge 2 Thread: Take public transport where possible instead of driving'
+                    participants='Number of Participants: 20'
+                    sponsorCompany='Grapes Corporation'
+                    iconName='bus'>
+                </CommunityList>
+                <CommunityList
+                    name='Challenge 3 Thread: Plant 5 trees/plants!'
+                    participants='Number of Participants: 6'
+                    sponsorCompany='Alphab3t Corporation'
+                    iconName='bus'>
+                </CommunityList>
 
             </div>
+
+            <Box mt={8}>
+                <Copyright />
+            </Box>
+
         </Container>
     );
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -19,6 +19,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 //import the font
 import CeraPro from '../../assets/css/CeraPro-Regular.woff'
+import Axios from 'axios';
 
 const cerapro = {
     fontFamily: 'Cera Pro',
@@ -96,8 +97,34 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Milestones() {
-
+    
     const classes = useStyles();
+
+    const [content, setContent] = useState(null);
+    
+    useEffect(() => {
+        (async ()=>{
+            if (content != null){
+                return;
+            }
+
+            const res = await Axios.get(`http://${window.location.hostname}/challenges`);
+
+            console.log(res.data.challenges)
+            const updatedContent = res.data.challenges.map((c) => (
+                <MilestoneUnit
+                    name={c.title}
+                    reward={c.reward.title}
+                    curVal={c.current_amount}
+                    targetVal={c.goal_amount}
+                    iconName={c.icon}
+                ></MilestoneUnit>
+            ))
+
+            setContent(updatedContent);
+        })();
+    }, [content])
+
 
     return (
         <Container component="main" maxWidth="xs" >
@@ -105,33 +132,10 @@ export default function Milestones() {
             <CssBaseline />
 
             <div className={classes.paper}>
+                
                 <Grid container direction='row' justify="space-between">
-                    <Grid item><h2 style={{fontType:'bold'}}>Your Challenges</h2></Grid>
-
-                </Grid>
-                <MilestoneUnit
-                name='Take Public Transport'
-                reward='10% Lazada Voucher'
-                curVal='50'
-                targetVal='100'
-                iconName='bus'></MilestoneUnit>
-                
-                <MilestoneUnit iconName='lunchBox'
-                name='Bring your own Container'
-                reward='Free Entry to Science Museum'></MilestoneUnit>
-                <MilestoneUnit 
-                name='Walk to the Supermarket'
-                reward='5% off NTUC purchases'
-                iconName='shoes'></MilestoneUnit>
-                <MilestoneUnit 
-                name='Plant some seeds'
-                reward='Free delivery for Amazon Prime'
-                iconName='plant'></MilestoneUnit>
-                <MilestoneUnit 
-                name='Recycle Plastic Bottles'
-                reward='7% off NTUC purchases'
-                iconName='bottle'></MilestoneUnit>
-                
+                  <Grid item><h2 style={{fontType:'bold'}}>Your Challenges</h2></Grid>
+                  {content}
             </div>
             <Box mt={8}>
                 <Copyright />

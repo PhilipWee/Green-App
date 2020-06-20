@@ -161,7 +161,7 @@ export default function ActivityLog(props) {
 
     const [state, setState] = React.useState({
         checkedA: true,
-        checkedB: true,
+        checkedB: false,
         checkedF: true,
         checkedG: true,
     });
@@ -182,7 +182,7 @@ export default function ActivityLog(props) {
     return (
         <ThemeProvider theme={theme}>
 
-            <Container component="main" maxWidth="xs" >
+            <Container component="main" maxWidth="xs" style={{height:'90vh'}}>
 
 
 
@@ -284,7 +284,15 @@ export default function ActivityLog(props) {
                                 </Grid>
                                 <Box mt={2}></Box>
                                 <Grid item>
-                                    <DropzoneAreaExample></DropzoneAreaExample>
+                                    <Grid container direction='row' alignItems='baseline' justify='space-between'>
+                                        <Grid item>
+                                            <DropzoneAreaExample></DropzoneAreaExample>
+                                            
+                                        </Grid>
+                                        <Grid item><Button variant='contained' color='primary' href='/milestones'>Submit
+                                            </Button></Grid>
+                                    </Grid>
+
                                 </Grid>
 
                             </Grid>

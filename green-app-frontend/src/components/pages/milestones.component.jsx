@@ -127,7 +127,7 @@ export default function Milestones() {
 
 
     return (
-        <Container component="main" maxWidth="xs" >
+        <Container component="main" maxWidth="xs" style={{height:'90vh'}}>
 
             <CssBaseline />
 

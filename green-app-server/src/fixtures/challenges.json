@@ -1,7 +1,7 @@
 {
     "123456" : {
         "id": "123456",
-        "title": "recycle bottles",
+        "title": "Recycle Bottles",
         "icon": "bottle",
         "company": "lazada",
         "reward": {
@@ -16,7 +16,7 @@
 
     "654321" : {
         "id": "654321",
-        "title": "use a tupperware container",
+        "title": "Use a Tupperware Container",
         "icon": "lunchBox",
         "company": "shopee",
         "reward": {

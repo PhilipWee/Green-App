@@ -198,6 +198,7 @@ export default function SignIn() {
                       variant="contained"
                       color="primary"
                       className={classes.submit}
+                      href='/milestones'
                     >LOGIN
     </Button>
                   </Col>

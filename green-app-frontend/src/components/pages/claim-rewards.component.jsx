@@ -80,7 +80,7 @@ export default function ClaimRewards() {
     }, [content])
 
     return (
-        <Container component="main" maxWidth="xs" >
+        <Container component="main" maxWidth="xs" style={{height:'90vh'}}>
 
             <CssBaseline />
 

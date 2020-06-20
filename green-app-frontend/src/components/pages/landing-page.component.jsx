@@ -102,7 +102,7 @@ export default function LandingPage() {
                                 <h4>More Savings.</h4>
                             </Grid>
                             <Grid item>
-                                <Button variant='contained'>
+                                <Button variant='contained' href='/login-page'>
                                     Sign up now.
                                 </Button>
                             </Grid>

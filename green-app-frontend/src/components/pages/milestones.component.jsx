@@ -136,6 +136,7 @@ export default function Milestones() {
                 <Grid container direction='row' justify="space-between">
                   <Grid item><h2 style={{fontType:'bold'}}>Your Challenges</h2></Grid>
                   {content}
+                </Grid>
             </div>
             <Box mt={8}>
                 <Copyright />

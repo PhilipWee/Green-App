@@ -115,7 +115,7 @@ export default function CommunityPage() {
                     name='Challenge 1 Thread: Recycle some bottles'
                     participants='Number of Participants: 10'
                     sponsorCompany='SUxTD Pte Ltd'
-                    iconName='bus'>
+                    iconName='bottle'>
                 </CommunityList>
                 <CommunityList
                     name='Challenge 2 Thread: Take public transport where possible instead of driving'
@@ -127,7 +127,7 @@ export default function CommunityPage() {
                     name='Challenge 3 Thread: Plant 5 trees/plants!'
                     participants='Number of Participants: 6'
                     sponsorCompany='Alphab3t Corporation'
-                    iconName='bus'>
+                    iconName='plant'>
                 </CommunityList>
 
             </div>

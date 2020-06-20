@@ -107,7 +107,6 @@ class CommunityList extends Component {
 							>
 								<Grid
 									item
-									style={{ width: '20%' }}
 									xs={3}
 								>
 									<IconSVG iconName={this.props.iconName || 'bus'}></IconSVG>

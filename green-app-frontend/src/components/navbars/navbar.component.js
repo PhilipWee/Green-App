@@ -24,7 +24,13 @@ const Example = (props) => {
   return (
     <div>
       <Navbar color="dark" dark expand="md">
-        <NavbarBrand href="/">Green App</NavbarBrand>
+        <NavbarBrand href="/">
+          <img
+            alt="..."
+            src={require("../../assets/1x/logosolo-06.png")}
+            style={{width:"50px"}}
+          />
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
@@ -42,11 +48,11 @@ const Example = (props) => {
                 <DropdownItem href='/community-page'>
                   Our Community
                 </DropdownItem>
-                
+
                 {/* <DropdownItem href='/community-page'>
                 Our Shared Activities
                 </DropdownItem> */}
-                
+
               </DropdownMenu>
               <Box pt={1}></Box>
             </UncontrolledDropdown>

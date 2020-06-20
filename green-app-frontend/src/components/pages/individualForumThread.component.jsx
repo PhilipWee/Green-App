@@ -15,6 +15,7 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import ThreadList from '../subcomponents/thread-list.component';
+import ThreadForm from '../subcomponents/thread-form.component';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import CeraPro from '../../assets/css/CeraPro-Regular.woff'
 
@@ -104,29 +105,34 @@ export default function ForumThread() {
 
             <div className={classes.paper}>
                 <Grid container direction='row' justify="space-between">
-                    <Grid item>Thread 1 Activities</Grid>
-
+                    <Grid item><h3>Thread 1 Activities</h3></Grid>
+                    <Grid item>
+                        <ThreadList
+                        threadnumber="#1"
+                        username='Philip Wee'
+                        content='Anyone wants to recycle at the collection point together?'
+                        ></ThreadList>
+                        <ThreadList
+                        threadnumber="#2"
+                        username='Nicholas Lim'
+                        content='Hi guys, nice to see us all recycling together! LOL'>
+                        </ThreadList>
+                        <ThreadList
+                        threadnumber="#3"
+                        username='Low En'
+                        content='@PhilipWee Hey I am in, lets go at 3pm?'>
+                        </ThreadList>
+                        <ThreadList
+                        threadnumber="#4"
+                        username='Son Soo Han'
+                        content='We are almost reaching the challenge goal!'>
+                        </ThreadList>
+                    </Grid>
+                    <Grid item>
+                        <ThreadForm />
+                    </Grid>
                 </Grid>
-                <ThreadList
-                    threadnumber="#1"
-                    username='Philip Wee'
-                    content='Anyone wants to recycle at the collection point together?'
-                ></ThreadList>
-                <ThreadList
-                    threadnumber="#2"
-                    username='Nicholas Lim'
-                    content='Hi guys, nice to see us all recycling together! LOL'>
-                </ThreadList>
-                <ThreadList
-                    threadnumber="#3"
-                    username='Low En'
-                    content='@PhilipWee Hey I am in, lets go at 3pm?'>
-                </ThreadList>
-                <ThreadList
-                    threadnumber="#4"
-                    username='Son Soo Han'
-                    content='We are almost reaching the challenge goal!'>
-                </ThreadList>
+
 
             </div>
 

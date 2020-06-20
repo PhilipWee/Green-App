@@ -20,7 +20,7 @@ import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import MilestoneUnit from '../subcomponents/milestone-unit.component';
 import Slider from '@material-ui/core/Slider';
-// import { DropzoneArea } from 'material-ui-dropzone'
+import { DropzoneArea } from 'material-ui-dropzone'
 import { DropzoneDialog } from 'material-ui-dropzone';
 
 

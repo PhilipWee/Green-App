@@ -15,6 +15,43 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import MilestoneUnit from '../subcomponents/milestone-unit.component';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+
+//import the font
+import CeraPro from '../../assets/css/CeraPro-Regular.woff'
+
+const cerapro = {
+    fontFamily: 'Cera Pro',
+    src: `local('Cera Pro Regular'), local('CeraPro-Regular'),
+        url(${CeraPro}) format('woff')`,
+    fontWeight: 'normal',
+    fontStyle: 'normal'
+}
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            main: "#3e4069",
+        },
+        secondary: {
+            main: '#c4c5d9',
+        },
+    },
+    typography: {
+        fontFamily: [
+            'Cera Pro',
+
+        ].join(','),
+
+    },
+    overrides: {
+        MuiCssBaseline: {
+            '@Global': {
+                '@font-face': cerapro,
+            }
+        }
+    }
+});
 
 function Copyright() {
     return (
@@ -69,18 +106,19 @@ export default function Milestones() {
 
             <div className={classes.paper}>
                 <Grid container direction='row' justify="space-between">
-                    <Grid item>Goals</Grid>
+                    <Grid item><h2 style={{fontType:'bold'}}>Your Challenges</h2></Grid>
 
                 </Grid>
                 <MilestoneUnit 
                 name='Recycle some bottles' 
                 reward='10% Lazada Voucher on completion'
                 curVal='50'
-                targetVal='100'></MilestoneUnit>
-                <MilestoneUnit></MilestoneUnit>
-                <MilestoneUnit></MilestoneUnit>
-                <MilestoneUnit></MilestoneUnit>
-                <MilestoneUnit></MilestoneUnit>
+                targetVal='100'
+                iconName='bus'></MilestoneUnit>
+                <MilestoneUnit iconName='lunchBox'></MilestoneUnit>
+                <MilestoneUnit iconName='shoes'></MilestoneUnit>
+                <MilestoneUnit iconName='plant'></MilestoneUnit>
+                <MilestoneUnit iconName='bottle'></MilestoneUnit>
                 
             </div>
             <Box mt={8}>

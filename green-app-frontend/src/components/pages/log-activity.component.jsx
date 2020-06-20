@@ -94,7 +94,7 @@ function valuetext(value) {
     return `${value}°C`;
 }
 
-export default function Milestones() {
+export default function ActivityLog() {
 
     const [state, setState] = React.useState({
         checkedA: true,

@@ -35,25 +35,6 @@ const Example = (props) => {
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
-                My Environment
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem href='/activity-generation'>
-                  My Activities
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem href='/goal-setter-with-buddy'>
-                  My Goals
-                </DropdownItem>
-
-                <DropdownItem href='/certificate-generation'>
-                  My Certificates
-                </DropdownItem>
-
-              </DropdownMenu>
-            </UncontrolledDropdown>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
                 Community Threads
               </DropdownToggle>
               <DropdownMenu right>
@@ -64,9 +45,6 @@ const Example = (props) => {
                 Our Shared Activities
                 </DropdownItem> */}
                 <DropdownItem divider />
-                <DropdownItem href='/accountability-buddy-chat'>
-                  Buddy Chat
-                </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>

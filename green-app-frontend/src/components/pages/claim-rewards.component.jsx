@@ -72,7 +72,7 @@ export default function ClaimRewards() {
 
             console.log(res.data.challenges)
             const updatedContent = res.data.rewards.map((r) => (
-                <RewardUnit name={r.title}></RewardUnit>
+                <RewardUnit title={r.title} description={r.description} imageSrc={r.image}></RewardUnit>
             ))
 
             setContent(updatedContent);

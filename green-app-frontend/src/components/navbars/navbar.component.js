@@ -28,33 +28,11 @@ const Example = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/carbon-emission-calculator/">Carbon Emission Calculator</NavLink>
-            </NavItem>
-            <NavItem>
               <NavLink href="/milestones">Milestones</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/claim-rewards">My Rewards</NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                My Environment
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem href='/activity-generation'>
-                  My Activities
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem href='/goal-setter-with-buddy'>
-                  My Goals
-                </DropdownItem>
-
-                <DropdownItem href='/certificate-generation'>
-                  My Certificates
-                </DropdownItem>
-
-              </DropdownMenu>
-            </UncontrolledDropdown>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Community Threads
@@ -67,9 +45,6 @@ const Example = (props) => {
                 Our Shared Activities
                 </DropdownItem> */}
                 <DropdownItem divider />
-                <DropdownItem href='/accountability-buddy-chat'>
-                  Buddy Chat
-                </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>

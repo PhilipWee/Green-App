@@ -80,9 +80,6 @@ class IconSVG extends Component {
 
         }
     }
-
-
-
 }
 
 

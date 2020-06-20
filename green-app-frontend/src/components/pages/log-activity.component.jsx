@@ -23,6 +23,7 @@ import MilestoneUnit from '../subcomponents/milestone-unit.component';
 import Slider from '@material-ui/core/Slider';
 import { withRouter } from 'react-router-dom'
 // import { DropzoneArea } from 'material-ui-dropzone'
+import { DropzoneArea } from 'material-ui-dropzone'
 import { DropzoneDialog } from 'material-ui-dropzone';
 import { useHistory } from "react-router-dom";
 import Paper from '@material-ui/core/Paper';

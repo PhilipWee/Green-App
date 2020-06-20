@@ -132,7 +132,10 @@ export default function Milestones() {
             <CssBaseline />
 
             <div className={classes.paper}>
-                {content}
+                
+                <Grid container direction='row' justify="space-between">
+                  <Grid item><h2 style={{fontType:'bold'}}>Your Challenges</h2></Grid>
+                  {content}
             </div>
             <Box mt={8}>
                 <Copyright />

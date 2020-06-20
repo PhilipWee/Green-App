@@ -14,6 +14,7 @@ import {
   NavbarText,
   Button
 } from 'reactstrap';
+import Box from '@material-ui/core/Box';
 
 const Example = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,33 +29,11 @@ const Example = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/carbon-emission-calculator/">Carbon Emission Calculator</NavLink>
-            </NavItem>
-            <NavItem>
               <NavLink href="/milestones">Milestones</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/claim-rewards">My Rewards</NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                My Environment
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem href='/activity-generation'>
-                  My Activities
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem href='/goal-setter-with-buddy'>
-                  My Goals
-                </DropdownItem>
-
-                <DropdownItem href='/certificate-generation'>
-                  My Certificates
-                </DropdownItem>
-
-              </DropdownMenu>
-            </UncontrolledDropdown>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 Community Threads
@@ -63,14 +42,13 @@ const Example = (props) => {
                 <DropdownItem href='/community-page'>
                   Our Community
                 </DropdownItem>
+                
                 {/* <DropdownItem href='/community-page'>
                 Our Shared Activities
                 </DropdownItem> */}
-                <DropdownItem divider />
-                <DropdownItem href='/accountability-buddy-chat'>
-                  Buddy Chat
-                </DropdownItem>
+                
               </DropdownMenu>
+              <Box pt={1}></Box>
             </UncontrolledDropdown>
           </Nav>
 

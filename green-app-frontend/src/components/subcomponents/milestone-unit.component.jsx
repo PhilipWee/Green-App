@@ -11,6 +11,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
 import purple from '@material-ui/core/colors/purple';
 import green from '@material-ui/core/colors/green';
+import { useHistory } from "react-router-dom";
 
 //import the font
 import CeraPro from '../../assets/css/CeraPro-Regular.woff'
@@ -55,11 +56,11 @@ const BorderLinearProgress = withStyles((theme) => ({
         borderRadius: 5,
     },
     colorPrimary: {
-        backgroundColor: theme.palette.secondary,
+        backgroundColor: theme.palette.grey[theme.palette.type === 'light' ? 200 : 700],
     },
     bar: {
         borderRadius: 5,
-        backgroundColor: theme.palette.primary,
+        backgroundColor: '#1a90ff',
     },
 }))(LinearProgress);
 
@@ -68,104 +69,110 @@ class IconSVG extends Component {
     render() {
         switch (this.props.iconName) {
             case 'bus':
-                return <img src={require('../../assets/1x/Asset 8.svg')}></img>
+                return <img style={{ 'width': '100%' }} src={require('../../assets/1x/Asset 8.png')}></img>
             case 'lunchBox':
-                return <img src={require('../../assets/1x/Asset 9.svg')}></img>
+                return <img style={{ 'width': '100%' }} src={require('../../assets/1x/Asset 9.png')}></img>
             case 'shoes':
-                return <img src={require('../../assets/1x/Asset 10.svg')}></img>
+                return <img style={{ 'width': '100%' }} src={require('../../assets/1x/Asset 10.png')}></img>
             case 'plant':
-                return <img src={require('../../assets/1x/Asset 11.svg')}></img>
+                return <img style={{ 'width': '100%' }} src={require('../../assets/1x/Asset 11.png')}></img>
             case 'bottle':
-                return <img src={require('../../assets/1x/Asset 12.svg')}></img>
+                return <img style={{ 'width': '100%' }} src={require('../../assets/1x/Asset 12.png')}></img>
 
         }
     }
-
-
-
 }
 
+// function ClickablePaper() {
+//     return(
+//         <Paper elevation={3} style={{ 'border-radius': '50px' }} onClick={event => {history.push('/')}}></Paper>
+//     )
+// }
+
+export default function MilestoneUnit(props) {
+
+    const history = useHistory();
+
+    function handleClick(){
+        history.push('/log-activity/'+props.iconName+'&'+props.name)
+    }
+
+    return (
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <Box mt={3}>
+                <Paper elevation={3} style={{ 'border-radius': '50px' }} onClick={handleClick}>
+
+                    <Box px={3} py={2}>
+
+                        <Grid container wrap='nowrap' direction='row' alignItems='center' justify='space-between'>
+
+                            <Grid item style={{ 'width': '20%' }}>
+
+                                {/* <img style={{'width':'100%'}} src={require('../../assets/1x/Asset 12.png')}></img> */}
 
 
-class MilestoneUnit extends Component {
 
+                                <IconSVG iconName={props.iconName || 'bus'}></IconSVG>
+                            </Grid>
+                            <Grid item style={{ width: '70%' }}>
+                                <Grid container direction="column"
+                                    justify="center"
+                                    alignItems="stretch"
+                                >
+                                    <Grid item><BorderLinearProgress variant='determinate' value={props.curVal / props.targetVal * 100 || 50} /></Grid>
+                                    <Grid item>
+                                        <h6 style={{ margin: 0 }}>{props.name || 'milestoneName'}</h6>
+                                    </Grid>
+                                    <Grid item>{props.reward || 'milestoneReward'}</Grid>
 
-    render() {
-
-        return (
-            <ThemeProvider theme={theme}>
-                <CssBaseline />
-                <Box mt={3}>
-
-                    <Paper elevation={3} style={{ 'border-radius': '50px' }}>
-
-                        <Box px={3} py={2}>
-
-                            <Grid container direction='row' alignItems='center' justify='space-between'>
-
-                                <Grid item style={{ width: '20%' }}>
-
-                                    <IconSVG iconName={this.props.iconName || 'bus'}></IconSVG>
-                                </Grid>
-                                <Grid item style={{width:'70%'}}>
-                                    <Grid container direction="column"
-                                        justify="center"
-                                        alignItems="stretch"
-                                        >
-                                        <Grid item><BorderLinearProgress variant='determinate' value={this.props.curVal / this.props.targetVal * 100 || 50} /></Grid>
-                                        <Grid item>
-                                            <h6 style={{ margin: 0 }}>{this.props.name || 'milestoneName'}</h6>
+                                    <Grid item>
+                                        <Grid container direction='row' justify='flex-end'>
+                                            <Grid item>{props.curVal || 50}/{props.targetVal || 100}</Grid>
                                         </Grid>
-                                        <Grid item>{this.props.reward || 'milestoneReward'}</Grid>
-
-                                        <Grid item>
-                                            <Grid container direction='row' justify='flex-end'>
-                                                <Grid item>{this.props.curVal || 50}/{this.props.targetVal || 100}</Grid>
-                                            </Grid>
-                                        </Grid>
-                                        <Grid item>
-                                            {/* <Grid container alignItems="flex-start" justify="space-between" direction="row">
+                                    </Grid>
+                                    <Grid item>
+                                        {/* <Grid container alignItems="flex-start" justify="space-between" direction="row">
                             <Button variant="contained">CHALLENGE FORUM</Button>
                             <Button variant="contained">Contribute</Button>
                         </Grid> */}
-                                        </Grid>
-
                                     </Grid>
+
                                 </Grid>
                             </Grid>
+                        </Grid>
 
-                        </Box>
+                    </Box>
 
-                    </Paper>
+                </Paper>
 
 
 
-                </Box>
-            </ThemeProvider>
+            </Box>
+        </ThemeProvider>
 
-            // <Col className="pb-5 mb-5" lg="4">
-            //     <Card className="card-lift--hover shadow border-0">
-            //         <CardImg variant="top" src={this.props.map_img_featured} />
-            //         <CardBody className="pb-5">
-            //             <h6 className="text-primary text-uppercase">
-            //                 {this.props.map_name}
-            //             </h6>
-            //             <p className="description">
-            //                 {this.props.map_description}
-            //             </p>
-            //             <Button
-            //                 className="mt-2"
-            //                 color="primary"
-            //                 href="#pablo"
-            //                 onClick={e => e.preventDefault()}
-            //             >
-            //                 Develop Strats
-            //               </Button>
-            //         </CardBody>
-            //     </Card>
-            // </Col>
-        )
-    }
+        // <Col className="pb-5 mb-5" lg="4">
+        //     <Card className="card-lift--hover shadow border-0">
+        //         <CardImg variant="top" src={props.map_img_featured} />
+        //         <CardBody className="pb-5">
+        //             <h6 className="text-primary text-uppercase">
+        //                 {props.map_name}
+        //             </h6>
+        //             <p className="description">
+        //                 {props.map_description}
+        //             </p>
+        //             <Button
+        //                 className="mt-2"
+        //                 color="primary"
+        //                 href="#pablo"
+        //                 onClick={e => e.preventDefault()}
+        //             >
+        //                 Develop Strats
+        //               </Button>
+        //         </CardBody>
+        //     </Card>
+        // </Col>
+    )
 }
 
-export default MilestoneUnit
+

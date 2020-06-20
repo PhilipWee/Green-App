@@ -20,10 +20,14 @@ export default class CreateTodo extends Component {
 			});
 		}
 		handleSubmit(event) {
+			// to prevent page reload
+			event.preventDefault();
 			//just creating this cancer here to test and idk how react is supposed to structure
 			//https://www.notion.so/Trip-to-Carbon-API-REFERENCE-a68cfb4e0dcc41f9826cba1f3e4af5ac
 			// need to construct the payload(?)
-			axios.get('https://api.triptocarbon.xyz/v1/footprint?activity=100&activityType=miles&country=usa&mode=taxi')
+			axios.get('https://api.triptocarbon.xyz/v1/footprint?activity=100&activityType=miles&country=usa&mode=taxi', {
+				headers : { 'Access-Control-Allow-Origin': '*'}
+			})
 				.then(res => {
 					console.log(res);
 					const carbonFootprint = res.data;

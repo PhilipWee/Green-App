@@ -14,6 +14,7 @@ import {
   NavbarText,
   Button
 } from 'reactstrap';
+import Box from '@material-ui/core/Box';
 
 const Example = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,11 +42,13 @@ const Example = (props) => {
                 <DropdownItem href='/community-page'>
                   Our Community
                 </DropdownItem>
+                
                 {/* <DropdownItem href='/community-page'>
                 Our Shared Activities
                 </DropdownItem> */}
-                <DropdownItem divider />
+                
               </DropdownMenu>
+              <Box pt={1}></Box>
             </UncontrolledDropdown>
           </Nav>
 

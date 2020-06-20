@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -19,6 +19,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 //import the font
 import CeraPro from '../../assets/css/CeraPro-Regular.woff'
+import Axios from 'axios';
 
 const cerapro = {
     fontFamily: 'Cera Pro',
@@ -96,8 +97,34 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Milestones() {
-
+    
     const classes = useStyles();
+
+    const [content, setContent] = useState(null);
+    
+    useEffect(() => {
+        (async ()=>{
+            if (content != null){
+                return;
+            }
+
+            const res = await Axios.get(`http://${window.location.hostname}/challenges`);
+
+            console.log(res.data.challenges)
+            const updatedContent = res.data.challenges.map((c) => (
+                <MilestoneUnit
+                    name={c.title}
+                    reward={c.reward.title}
+                    curVal={c.current_amount}
+                    targetVal={c.goal_amount}
+                    iconName={c.icon}
+                ></MilestoneUnit>
+            ))
+
+            setContent(updatedContent);
+        })();
+    }, [content])
+
 
     return (
         <Container component="main" maxWidth="xs" >
@@ -105,21 +132,7 @@ export default function Milestones() {
             <CssBaseline />
 
             <div className={classes.paper}>
-                <Grid container direction='row' justify="space-between">
-                    <Grid item><h2 style={{fontType:'bold'}}>Your Challenges</h2></Grid>
-
-                </Grid>
-                <MilestoneUnit
-                name='Recycle some bottles'
-                reward='10% Lazada Voucher on completion'
-                curVal='50'
-                targetVal='100'
-                iconName='bus'></MilestoneUnit>
-                <MilestoneUnit iconName='lunchBox'></MilestoneUnit>
-                <MilestoneUnit iconName='shoes'></MilestoneUnit>
-                <MilestoneUnit iconName='plant'></MilestoneUnit>
-                <MilestoneUnit iconName='bottle'></MilestoneUnit>
-                
+                {content}
             </div>
             <Box mt={8}>
                 <Copyright />

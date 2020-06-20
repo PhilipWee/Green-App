@@ -52,6 +52,8 @@ class App extends Component {
             <Route path="/login-page" exact component={LoginPage} />
             <Route path="/" exact component={LandingPage} />
             <Route path="/milestones" exact component={Milestones} />
+            <Route path="/claim-rewards" exact component={ClaimRewards} />
+            <Route path="/log-activity" exact component={LogActivity} />
           </Switch>
           <NavbarBottom></NavbarBottom>
         </div>

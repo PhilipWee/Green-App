@@ -33,6 +33,9 @@ const Example = (props) => {
             <NavItem>
               <NavLink href="/milestones">Milestones</NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink href="/claim-rewards">My Rewards</NavLink>
+            </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
                 My Environment

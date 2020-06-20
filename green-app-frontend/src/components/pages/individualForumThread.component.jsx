@@ -14,6 +14,7 @@ import LinearProgress from '@material-ui/core/LinearProgress'
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
+import ThreadList from '../subcomponents/thread-list.component';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -42,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function Forum() {
+export default function ForumThread() {
 
     const classes = useStyles();
 
@@ -51,6 +52,20 @@ export default function Forum() {
 
             <CssBaseline />
 
+            <div className={classes.paper}>
+                <Grid container direction='row' justify="space-between">
+                    <Grid item>Thread 1 Activities</Grid>
+
+                </Grid>
+                <ThreadList
+                    threadnumber="1"
+                    username='DeWang'
+                    content='Anyone wants to recycle at the collection point together?'
+                ></ThreadList>
+                <ThreadList></ThreadList>
+                <ThreadList></ThreadList>
+
+            </div>
         </Container>
     );
 }

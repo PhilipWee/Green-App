@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function Forum() {
+export default function CommunityPage() {
 
     const classes = useStyles();
 

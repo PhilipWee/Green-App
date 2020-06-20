@@ -15,7 +15,7 @@ import CommunityPage from "./components/pages/community-page.component";
 import LandingPage from "./components/pages/landing-page.component";
 import LoginPage from "./components/pages/login-page.component";
 import Milestones from "./components/pages/milestones.component";
-import ThreadPage from "./components/pages/individualForumThread.component";
+import ForumThread from "./components/pages/individualForumThread.component";
 //Navbar Imports
 import Navbar from "./components/navbars/navbar.component";
 import NavbarBottom from "./components/navbars/navbar-bottom.component";
@@ -48,7 +48,7 @@ class App extends Component {
             <Route path="/activity-generation" exact component={ActivityGeneration} />
             <Route path="/certificate-generation" exact component={CertificateGeneration} />
             <Route path="/community-page" exact component={CommunityPage} />
-            <Route path="community-page/thread-challenge-1" exact component={ThreadPage} />
+            <Route path="/community-page/thread-challenge-1" exact component={ForumThread} />
             <Route path="/login-page" exact component={LoginPage} />
             <Route path="/" exact component={LandingPage} />
             <Route path="/milestones" exact component={Milestones} />

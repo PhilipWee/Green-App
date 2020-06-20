@@ -45,18 +45,13 @@ const theme = createMuiTheme({
 class ThreadForm extends Component {
 
     constuctor() {
-        this.state = {
-            name: '',
-            message: ''
-        };
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(event) {
-        this.setState({
-            name: event.target.value,
-            message: event.target.value
-        })
-        alert(this.state)
+        event.preventDefault()
+        const data = new FormData(event.target)
+        alert("Your response has been submitted!")
     };
 
     render() {
@@ -74,6 +69,7 @@ class ThreadForm extends Component {
                                     <label>
                                         Name: <br />
                                         <input
+                                            id='name'
                                             type='text'
                                             name='name'
                                             size='30' />
@@ -82,6 +78,7 @@ class ThreadForm extends Component {
                                     <label>
                                         Message: <br />
                                         <input
+                                            id='message'
                                             type="text"
                                             name="message"
                                             size='30' />

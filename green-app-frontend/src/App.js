@@ -23,7 +23,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      color:'#FFFFFF'
+      color:'#eaeaea'
     }
   }
 
@@ -33,9 +33,9 @@ class App extends Component {
   // '#c5c5da'
   render() {
     return (
-
+      
       <Router>
-        <div style={{backgroundColor:this.state.color}}>
+        <div style={{backgroundColor:this.state.color, height:'100%'}}>
           <Navbar></Navbar>
           <Switch>
             <Route path="/activity-generation" exact component={ActivityGeneration} />

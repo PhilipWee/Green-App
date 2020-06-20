@@ -182,7 +182,7 @@ export default function ActivityLog(props) {
     return (
         <ThemeProvider theme={theme}>
 
-            <Container component="main" maxWidth="xs" >
+            <Container component="main" maxWidth="xs" style={{height:'90vh'}}>
 
 
 

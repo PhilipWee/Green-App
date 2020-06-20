@@ -95,30 +95,31 @@ export default function LandingPage() {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
-            <div className={classes.paper} style={{marginLeft:20,position:'absolute'}}>
-                        <Grid container direction='column'>
-                            <Grid item>
-                                <h3 style={{margin:0}}>Less Pollution.</h3>
-                                <h4>More Savings.</h4>
-                            </Grid>
-                            <Grid item>
-                                <Button variant='contained' href='/login-page'>
-                                    Sign up now.
-                                </Button>
-                            </Grid>
+            <Container component="main" maxWidth="md" >
+                <div className={classes.paper} style={{ marginLeft: 20, position: 'absolute' }}>
+                    <Grid container direction='column'>
+                        <Grid item>
+                            <h3 style={{ margin: 0 }}>Less Pollution.</h3>
+                            <h4>More Savings.</h4>
                         </Grid>
-                    
-                
+                        <Grid item>
+                            <Button variant='contained' href='/login-page'>
+                                Sign up now.
+                                </Button>
+                        </Grid>
+                    </Grid>
 
-                {/* </div> */}
-            {/* </Container> */}
-            </div>
-            <img src={Background} style={{width:'100%'}}/>
-            {/* <div style={{ height: '100vh', backgroundRepeat: 'no-repeat',backgroundImage: `url("${Background}")`, backgroundSize: 'contain',width:'100%',height:0,paddingTop:'500%'}}>
+
+
+                    {/* </div> */}
+                    {/* </Container> */}
+                </div>
+                <img src={Background} style={{ width: '100%' }} />
+                {/* <div style={{ height: '100vh', backgroundRepeat: 'no-repeat',backgroundImage: `url("${Background}")`, backgroundSize: 'contain',width:'100%',height:0,paddingTop:'500%'}}>
             <Container component="main" maxWidth="xs" > */}
-                
-                    
 
+
+            </Container>
 
 
         </ThemeProvider>

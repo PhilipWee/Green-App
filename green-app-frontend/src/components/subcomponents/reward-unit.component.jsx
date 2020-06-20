@@ -7,24 +7,28 @@ import Button from '@material-ui/core/Button';
 
 const BorderLinearProgress = withStyles((theme) => ({
     root: {
-      height: 10,
-      borderRadius: 5,
+        height: 10,
+        borderRadius: 5,
     },
     colorPrimary: {
-      backgroundColor: theme.palette.grey[theme.palette.type === 'light' ? 200 : 700],
+        backgroundColor: theme.palette.grey[theme.palette.type === 'light' ? 200 : 700],
     },
     bar: {
-      borderRadius: 5,
-      backgroundColor: '#1a90ff',
+        borderRadius: 5,
+        backgroundColor: '#1a90ff',
     },
-  }))(LinearProgress);
+}))(LinearProgress);
 
-class MilestoneUnit extends Component {
+class RewardUnit extends Component {
 
     render() {
         return (
-            <Box mt={5}>
-                <Grid container direction='column'>
+            <Box mt={2}>
+                <Grid container direction='column' alignItems='stretch'>
+                    <Button variant='contained'>{this.props.name || 'Reward Name'}</Button>
+                </Grid>
+
+                {/* <Grid container direction='column'>
                     <Grid item>{this.props.name || 'milestoneName'}</Grid>
                     <Grid item>{this.props.reward || 'milestoneReward'}</Grid>
                     <Grid item><BorderLinearProgress variant='determinate' value={this.props.curVal/this.props.targetVal*100 || 50} /></Grid>
@@ -34,13 +38,12 @@ class MilestoneUnit extends Component {
                         </Grid>
                     </Grid>
                     <Grid item>
-                        <Grid container alignItems="flex-start" justify="space-between" direction="row">
-                            <Button variant="contained">CHALLENGE FORUM</Button>
+                        <Grid container alignItems="flex-start" justify="flex-end" direction="row">
                             <Button variant="contained">Contribute</Button>
                         </Grid>
                     </Grid>
 
-                </Grid>
+                </Grid> */}
 
 
             </Box>
@@ -69,4 +72,4 @@ class MilestoneUnit extends Component {
     }
 }
 
-export default MilestoneUnit
+export default RewardUnit

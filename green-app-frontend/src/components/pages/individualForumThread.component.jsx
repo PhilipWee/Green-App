@@ -14,7 +14,6 @@ import LinearProgress from '@material-ui/core/LinearProgress'
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
-import CommunityList from '../subcomponents/community-list.component';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -52,19 +51,6 @@ export default function Forum() {
 
             <CssBaseline />
 
-            <div className={classes.paper}>
-                <Grid container direction='row' justify="space-between">
-                    <Grid item>Community Forum Threads for ongoing Challenges</Grid>
-
-                </Grid>
-                <CommunityList
-                name='Challenge 1 Thread: Recycle some bottles'
-                participants='Number of Participants: 10'
-                sponsorCompany='SUxTD Pte Ltd'></CommunityList>
-                <CommunityList></CommunityList>
-                <CommunityList></CommunityList>
-
-            </div>
         </Container>
     );
 }

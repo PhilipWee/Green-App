@@ -5,31 +5,65 @@ import { makeStyles, withStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress'
 import Button from '@material-ui/core/Button';
 
-const BorderLinearProgress = withStyles((theme) => ({
-    root: {
-      height: 10,
-      borderRadius: 5,
+import Paper from '@material-ui/core/Paper';
+import { CssBaseline } from '@material-ui/core';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import CeraPro from '../../assets/css/CeraPro-Regular.woff'
+
+const cerapro = {
+    fontFamily: 'Cera Pro',
+    src: `local('Cera Pro Regular'), local('CeraPro-Regular'),
+        url(${CeraPro}) format('woff')`,
+    fontWeight: 'normal',
+    fontStyle: 'normal'
+}
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            main: "#3e4069",
+        },
+        secondary: {
+            main: '#c4c5d9',
+        },
     },
-    colorPrimary: {
-      backgroundColor: theme.palette.grey[theme.palette.type === 'light' ? 200 : 700],
+    typography: {
+        fontFamily: [
+            'Cera Pro',
+
+        ].join(','),
+
     },
-    bar: {
-      borderRadius: 5,
-      backgroundColor: '#1a90ff',
-    },
-  }))(LinearProgress);
+    overrides: {
+        MuiCssBaseline: {
+            '@Global': {
+                '@font-face': cerapro,
+            }
+        }
+    }
+});
 
 class ThreadList extends Component {
 
     render() {
         return (
-            <Box mt={2}>
-                <Grid container direction='column'>
-                    <Grid item>{this.props.threadnumber || '#'}</Grid>
-                    <Grid item>{this.props.username || 'User XXX'}</Grid>
-                    <Grid item>{this.props.content || 'Comments about the Challenge'}</Grid>
-                </Grid>
-            </Box>
+			<ThemeProvider theme={theme}>
+        		<CssBaseline />
+				<Box mt={3}>
+                	<Paper elevation={3} style={{ 'border-radius': '50px' }}>
+						<Box
+							px={5}
+							py={2}
+						>
+							<Grid container direction='column'>
+								<Grid item>{this.props.threadnumber || '#'}</Grid>
+								<Grid item>{this.props.username || 'User XXX'}</Grid>
+								<Grid item>{this.props.content || 'Comments about the Challenge'}</Grid>
+							</Grid>
+						</Box>
+					</Paper>
+				</Box>
+			</ThemeProvider>
         )
     }
 }

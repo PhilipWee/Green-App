@@ -81,8 +81,6 @@ class IconSVG extends Component {
         }
     }
 
-
-
 }
 
 
@@ -96,48 +94,48 @@ class MilestoneUnit extends Component {
             <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <Box mt={3}>
+                        <Paper elevation={3} style={{ 'border-radius': '50px' }} onClick={event => {}}>
 
-                    <Paper elevation={3} style={{ 'border-radius': '50px' }}>
+                            <Box px={3} py={2}>
 
-                        <Box px={3} py={2}>
+                                <Grid container direction='row' alignItems='center' justify='space-between'>
 
-                            <Grid container direction='row' alignItems='center' justify='space-between'>
+                                    <Grid item style={{ width: '20%' }}>
 
-                                <Grid item style={{ width: '20%' }}>
 
-                                    <IconSVG iconName={this.props.iconName || 'bus'}></IconSVG>
-                                </Grid>
-                                <Grid item style={{width:'70%'}}>
-                                    <Grid container direction="column"
-                                        justify="center"
-                                        alignItems="stretch"
+                                        <IconSVG iconName={this.props.iconName || 'bus'}></IconSVG>
+                                    </Grid>
+                                    <Grid item style={{ width: '70%' }}>
+                                        <Grid container direction="column"
+                                            justify="center"
+                                            alignItems="stretch"
                                         >
-                                        <Grid item><BorderLinearProgress variant='determinate' value={this.props.curVal / this.props.targetVal * 100 || 50} /></Grid>
-                                        <Grid item>
-                                            <h6 style={{ margin: 0 }}>{this.props.name || 'milestoneName'}</h6>
-                                        </Grid>
-                                        <Grid item>{this.props.reward || 'milestoneReward'}</Grid>
-
-                                        <Grid item>
-                                            <Grid container direction='row' justify='flex-end'>
-                                                <Grid item>{this.props.curVal || 50}/{this.props.targetVal || 100}</Grid>
+                                            <Grid item><BorderLinearProgress variant='determinate' value={this.props.curVal / this.props.targetVal * 100 || 50} /></Grid>
+                                            <Grid item>
+                                                <h6 style={{ margin: 0 }}>{this.props.name || 'milestoneName'}</h6>
                                             </Grid>
-                                        </Grid>
-                                        <Grid item>
-                                            {/* <Grid container alignItems="flex-start" justify="space-between" direction="row">
+                                            <Grid item>{this.props.reward || 'milestoneReward'}</Grid>
+
+                                            <Grid item>
+                                                <Grid container direction='row' justify='flex-end'>
+                                                    <Grid item>{this.props.curVal || 50}/{this.props.targetVal || 100}</Grid>
+                                                </Grid>
+                                            </Grid>
+                                            <Grid item>
+                                                {/* <Grid container alignItems="flex-start" justify="space-between" direction="row">
                             <Button variant="contained">CHALLENGE FORUM</Button>
                             <Button variant="contained">Contribute</Button>
                         </Grid> */}
-                                        </Grid>
+                                            </Grid>
 
+                                        </Grid>
                                     </Grid>
                                 </Grid>
-                            </Grid>
 
-                        </Box>
+                            </Box>
 
-                    </Paper>
-
+                        </Paper>
+                    
 
 
                 </Box>

@@ -115,6 +115,7 @@ export default function Milestones() {
                 curVal='50'
                 targetVal='100'
                 iconName='bus'></MilestoneUnit>
+                
                 <MilestoneUnit iconName='lunchBox'></MilestoneUnit>
                 <MilestoneUnit iconName='shoes'></MilestoneUnit>
                 <MilestoneUnit iconName='plant'></MilestoneUnit>

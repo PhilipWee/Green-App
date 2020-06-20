@@ -28,9 +28,6 @@ const Example = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/carbon-emission-calculator/">Carbon Emission Calculator</NavLink>
-            </NavItem>
-            <NavItem>
               <NavLink href="/milestones">Milestones</NavLink>
             </NavItem>
             <NavItem>

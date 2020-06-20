@@ -25,12 +25,12 @@ class MilestoneUnit extends Component {
         return (
             <Box mt={2}>
                 <Grid container direction='column'>
-                    <Grid item>Recycle Plastic Bottles</Grid>
-                    <Grid item>10% Lazada Voucher if completed</Grid>
-                    <Grid item><BorderLinearProgress variant='determinate' value={50} /></Grid>
+                    <Grid item>{this.props.name || 'milestoneName'}</Grid>
+                    <Grid item>{this.props.reward || 'milestoneReward'}</Grid>
+                    <Grid item><BorderLinearProgress variant='determinate' value={this.props.curVal/this.props.targetVal*100 || 50} /></Grid>
                     <Grid item>
                         <Grid container direction='row' justify='flex-end'>
-                            <Grid item>7000/10000</Grid>
+                            <Grid item>{this.props.curVal||50}/{this.props.targetVal||100}</Grid>
                         </Grid>
                     </Grid>
                     <Grid item>

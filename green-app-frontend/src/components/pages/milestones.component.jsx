@@ -72,6 +72,14 @@ export default function Milestones() {
                     <Grid item>Goals</Grid>
 
                 </Grid>
+                <MilestoneUnit 
+                name='Recycle some bottles' 
+                reward='10% Lazada Voucher on completion'
+                curVal='50'
+                targetVal='100'></MilestoneUnit>
+                <MilestoneUnit></MilestoneUnit>
+                <MilestoneUnit></MilestoneUnit>
+                <MilestoneUnit></MilestoneUnit>
                 <MilestoneUnit></MilestoneUnit>
                 
             </div>

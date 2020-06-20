@@ -57,7 +57,7 @@ const Example = (props) => {
             </UncontrolledDropdown>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
-                Our Environment
+                Community Threads
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem href='/community-page'>

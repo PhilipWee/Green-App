@@ -1,0 +1,29 @@
+{
+    "123456" : {
+        "id": "123456",
+        "title": "recycle bottles",
+        "company": "lazada",
+        "reward": {
+            "id": "abcdef",
+            "title": "10% lazada voucher"
+        },
+        "current_amount": 69,
+        "goal_amount": 420,
+        "start_date": "2020-06-20T00:00:00.000Z",
+        "end_date": "2020-06-22T00:00:00.000Z"
+    },
+
+    "654321" : {
+        "id": "654321",
+        "title": "use a tupperware container",
+        "company": "shopee",
+        "reward": {
+            "id": "hijklm",
+            "title": "10% shopee voucher"
+        },
+        "current_amount": 10,
+        "goal_amount": 1000,
+        "start_date": "2020-06-20T00:00:00.000Z",
+        "end_date": "2020-06-30T00:00:00.000Z"
+    }
+}

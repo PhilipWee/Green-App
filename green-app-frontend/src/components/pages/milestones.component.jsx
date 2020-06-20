@@ -110,16 +110,27 @@ export default function Milestones() {
 
                 </Grid>
                 <MilestoneUnit
-                name='Recycle some bottles'
+                name='Take Public Transport'
                 reward='10% Lazada Voucher'
                 curVal='50'
                 targetVal='100'
                 iconName='bus'></MilestoneUnit>
                 
-                <MilestoneUnit iconName='lunchBox'></MilestoneUnit>
-                <MilestoneUnit iconName='shoes'></MilestoneUnit>
-                <MilestoneUnit iconName='plant'></MilestoneUnit>
-                <MilestoneUnit iconName='bottle'></MilestoneUnit>
+                <MilestoneUnit iconName='lunchBox'
+                name='Bring your own Container'
+                reward='Free Entry to Science Museum'></MilestoneUnit>
+                <MilestoneUnit 
+                name='Walk to the Supermarket'
+                reward='5% off NTUC purchases'
+                iconName='shoes'></MilestoneUnit>
+                <MilestoneUnit 
+                name='Plant some seeds'
+                reward='Free delivery for Amazon Prime'
+                iconName='plant'></MilestoneUnit>
+                <MilestoneUnit 
+                name='Recycle Plastic Bottles'
+                reward='7% off NTUC purchases'
+                iconName='bottle'></MilestoneUnit>
                 
             </div>
             <Box mt={8}>
